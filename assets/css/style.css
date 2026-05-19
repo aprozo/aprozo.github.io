@@ -452,6 +452,8 @@ main { width: 100%; }
   transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
 }
 .tag:hover { color: var(--fg); border-color: var(--accent); background: var(--accent-soft); }
+a.tag { text-decoration: none; }
+a.tag:hover { color: var(--accent); }
 
 .hero-cta {
   display: flex;
@@ -585,7 +587,9 @@ main { width: 100%; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 0.6rem;
+  transition: color var(--t-fast) var(--ease);
 }
+a.card-tag:hover { color: var(--accent-2); }
 .card h3 {
   font-family: var(--font-serif);
   font-weight: 500;
@@ -750,7 +754,14 @@ main { width: 100%; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-.cc-value { font-size: 1.02rem; color: var(--fg); }
+.cc-value {
+  font-size: 0.98rem;
+  color: var(--fg);
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  padding-right: 1.6rem;
+  line-height: 1.35;
+}
 
 /* ---- footer ---- */
 .footer {
