@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "slug": "hello-world",
+      "title": "Hello, world — and why this blog exists",
+      "date": "2026-05-19",
+      "summary": "A place to keep my thoughts about physics, code, and life on the road between Prague, Darmstadt, and Brookhaven.",
+      "categories": ["diary"]
+    },
+    {
+      "slug": "scibot-notes",
+      "title": "SciBot — what we learned building an AI assistant for RHIC",
+      "date": "2026-04-10",
+      "summary": "Some early lessons from building an LLM-powered assistant on top of decades of RHIC documentation.",
+      "categories": ["projects", "ai"]
+    },
+    {
+      "slug": "jet-physics-101",
+      "title": "Jet physics, the very short version",
+      "date": "2026-03-02",
+      "summary": "A one-cup-of-coffee explanation of why we measure jets in heavy-ion collisions.",
+      "categories": ["physics"]
+    }
+  ]
+}
