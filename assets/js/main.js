@@ -120,7 +120,7 @@
 
     const PRT_COUNT = () => {
       const area = window.innerWidth * window.innerHeight;
-      return Math.max(14, Math.min(34, Math.round(area / 60000)));
+      return Math.max(10, Math.min(22, Math.round(area / 95000)));
     };
 
     let primaries = [];   // slow drifting particles
@@ -153,13 +153,13 @@
     }
 
     function spawnPrimary(p) {
-      const speed = 0.08 + Math.random() * 0.12;
+      const speed = 0.05 + Math.random() * 0.10;
       const ang = Math.random() * Math.PI * 2;
       p.x = Math.random() * w;
       p.y = Math.random() * h;
       p.vx = Math.cos(ang) * speed;
       p.vy = Math.sin(ang) * speed;
-      p.r  = 1.1 + Math.random() * 1.2;
+      p.r  = 0.7 + Math.random() * 0.9;
       p.life = 0;
       return p;
     }
@@ -238,16 +238,16 @@
         if (p.y < -20) p.y = h + 20;
         if (p.y > h + 20) p.y = -20;
 
-        // glow dot
-        const grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 14);
-        grd.addColorStop(0, rgba(rgbA, 0.55));
+        // soft glow
+        const grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 12);
+        grd.addColorStop(0, rgba(rgbA, 0.35));
         grd.addColorStop(1, rgba(rgbA, 0));
         ctx.fillStyle = grd;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, 14, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, 12, 0, Math.PI * 2);
         ctx.fill();
 
-        ctx.fillStyle = rgba(rgbA, 0.9);
+        ctx.fillStyle = rgba(rgbA, 0.75);
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();
