@@ -1,4 +1,4 @@
-# aprozo.github.io · aprozo.space
+# aprozo.github.io · aprozo.com
 
 Personal site of **Alexandr Prozorov** — experimental particle physicist.
 Pure static HTML / CSS / vanilla JS. No build step. No framework.
@@ -30,7 +30,7 @@ npx serve .
 ├── posts/
 │   ├── index.json      # Post manifest
 │   └── <slug>.md       # Markdown body per post
-└── CNAME               # GitHub Pages custom domain → aprozo.space
+└── CNAME               # GitHub Pages custom domain → aprozo.com
 ```
 
 ## Adding a new blog post
@@ -50,13 +50,13 @@ npx serve .
 
 3. Commit & push. GitHub Pages serves it.
 
-## Custom domain: aprozo.space (Cloudflare)
+## Custom domain: aprozo.com (Cloudflare)
 
 GitHub Pages already gets the `CNAME` file in this repo. To finish the wiring:
 
-1. **GitHub** → repo *Settings* → *Pages* → *Custom domain* → enter `aprozo.space`.
+1. **GitHub** → repo *Settings* → *Pages* → *Custom domain* → enter `aprozo.com`.
    Tick **Enforce HTTPS** after the cert appears (1–10 min).
-2. **Cloudflare** → DNS for `aprozo.space`, add:
+2. **Cloudflare** → DNS for `aprozo.com`, add:
 
    | Type | Name | Value                  | Proxy |
    |------|------|------------------------|-------|
@@ -67,7 +67,7 @@ GitHub Pages already gets the `CNAME` file in this repo. To finish the wiring:
    | CNAME| www  | aprozo.github.io       | proxied |
 
 3. **Cloudflare SSL/TLS** → *Full* (not Flexible) once GitHub HTTPS is active.
-4. Optional **Page Rule**: redirect `www.aprozo.space/*` → `https://aprozo.space/$1`.
+4. Optional **Page Rule**: redirect `www.aprozo.com/*` → `https://aprozo.com/$1`.
 
 Set DNS to *DNS only* (grey cloud) at first so GitHub can issue its Let's Encrypt
 cert via HTTP challenge. After it's enforced, you can switch back to proxied (orange cloud).
