@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ site.description | strip_newlines }}" />
+    <link rel="canonical" href="{{ site.url }}/" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='7' fill='%230b62c4'/%3E%3Ccircle cx='50' cy='50' r='32' fill='none' stroke='%230b62c4' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --fg: #16191d;
+        --muted: #5c646e;
+        --rule: #e3e6ea;
+        --link: #0b62c4;
+        --chip: #f1f3f5;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14171a;
+          --fg: #e6e8ea;
+          --muted: #9aa2ac;
+          --rule: #2a2f35;
+          --link: #6db3f2;
+          --chip: #21262c;
+        }
+      }
+      :root[data-theme="light"] {
+        --bg: #ffffff;
+        --fg: #16191d;
+        --muted: #5c646e;
+        --rule: #e3e6ea;
+        --link: #0b62c4;
+        --chip: #f1f3f5;
+      }
+      :root[data-theme="dark"] {
+        --bg: #14171a;
+        --fg: #e6e8ea;
+        --muted: #9aa2ac;
+        --rule: #2a2f35;
+        --link: #6db3f2;
+        --chip: #21262c;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0 auto;
+        padding: 3.5rem 1.25rem 4rem;
+        max-width: 46rem;
+        background: var(--bg);
+        color: var(--fg);
+        font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      a { color: var(--link); text-decoration: none; }
+      a:hover, a:focus { text-decoration: underline; }
+
+      header { display: flex; gap: 1.5rem; align-items: flex-start; }
+      header img {
+        width: 104px; height: 104px; flex: none;
+        border-radius: 50%; object-fit: cover;
+      }
+      .who { flex: 1; }
+      h1 { margin: 0 0 .3rem; font-size: 1.6rem; line-height: 1.2; letter-spacing: -.01em; }
+      .role { margin: 0; color: var(--muted); }
+      .affil { margin: .15rem 0 0; color: var(--muted); font-size: .95rem; }
+
+      .theme {
+        flex: none;
+        background: none;
+        border: 1px solid var(--rule);
+        border-radius: 6px;
+        color: var(--muted);
+        cursor: pointer;
+        font: inherit;
+        font-size: .82rem;
+        line-height: 1;
+        padding: .45rem .6rem;
+      }
+      .theme:hover { color: var(--fg); border-color: var(--muted); }
+
+      main > p:first-child { margin-top: 1.8rem; }
+
+      h2 {
+        margin: 2.6rem 0 .8rem;
+        font-size: .78rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 600;
+        border-bottom: 1px solid var(--rule);
+        padding-bottom: .4rem;
+      }
+
+      p { margin: 0 0 1rem; }
+      ul { margin: 0 0 1rem; padding-left: 1.1rem; }
+      li { margin-bottom: .55rem; }
+      li:last-child { margin-bottom: 0; }
+
+      .meta, .muted { color: var(--muted); }
+
+      /* Publications: every paragraph inside the block */
+      .pubs p { margin-bottom: .9rem; }
+      .pubs em { font-style: normal; color: var(--muted); }
+
+      blockquote {
+        border-left: 3px solid var(--link);
+        padding: .1rem 0 .1rem .9rem;
+        margin: 0 0 1rem;
+      }
+      blockquote p { margin: 0; }
+      blockquote p + p { color: var(--muted); }
+
+      .cv { list-style: none; padding: 0; margin: 0 0 1rem; }
+      .cv li { display: flex; gap: 1rem; margin-bottom: .5rem; }
+      .cv .yr {
+        flex: none; width: 7.5rem;
+        color: var(--muted); font-size: .9rem;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .skills { list-style: none; padding: 0; margin: 0 0 1rem; }
+      .skills li { margin-bottom: .7rem; }
+      .skills b {
+        display: block;
+        font-size: .78rem; letter-spacing: .06em; text-transform: uppercase;
+        color: var(--muted); font-weight: 600; margin-bottom: .15rem;
+      }
+      .chip {
+        background: var(--chip); border-radius: 4px;
+        padding: .1rem .38rem; margin: 0 .18rem .3rem 0;
+        display: inline-block; font-size: .89rem;
+      }
+
+      .links { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; padding: 0; list-style: none; }
+      .links li { margin-bottom: 0; }
+
+      footer {
+        margin-top: 3rem; padding-top: 1rem;
+        border-top: 1px solid var(--rule);
+        color: var(--muted); font-size: .88rem;
+      }
+
+      @media (max-width: 34rem) {
+        body { padding-top: 2.25rem; }
+        header { flex-wrap: wrap; gap: 1rem; }
+        header img { width: 88px; height: 88px; }
+        .cv li { display: block; }
+        .cv .yr { width: auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="{{ site.baseurl }}/assets/img/avatar.jpg" alt="" width="104" height="104" />
+      <div class="who">
+        <h1>{{ site.title }}</h1>
+        <p class="role">{{ page.role }}</p>
+        <p class="affil">{{ page.affiliation }}</p>
+      </div>
+      <button class="theme" type="button" id="theme" aria-label="Switch color theme">
+        Theme
+      </button>
+    </header>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer>{{ page.footer }}</footer>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var btn = document.getElementById("theme");
+        var saved = null;
+        try { saved = localStorage.getItem("theme"); } catch (e) {}
+        if (saved) root.setAttribute("data-theme", saved);
+        btn.addEventListener("click", function () {
+          var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var now = root.getAttribute("data-theme") || (dark ? "dark" : "light");
+          var next = now === "dark" ? "light" : "dark";
+          root.setAttribute("data-theme", next);
+          try { localStorage.setItem("theme", next); } catch (e) {}
+        });
+      })();
+    </script>
+  </body>
+</html>

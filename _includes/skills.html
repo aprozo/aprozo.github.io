@@ -1,0 +1,8 @@
+<ul class="skills">
+  {%- for row in page.skills %}
+  <li>
+    <b>{{ row.group }}</b>
+    {%- for item in row.items %}<span class="chip">{{ item }}</span>{% endfor %}
+  </li>
+  {%- endfor %}
+</ul>

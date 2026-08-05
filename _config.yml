@@ -1,0 +1,21 @@
+# Minimal Jekyll config. No theme, no plugins, so GitHub Pages builds it as-is.
+title: Alexandr Prozorov
+description: >-
+  Alexandr Prozorov, experimental nuclear physicist. Jets and heavy flavor in STAR,
+  vector-meson simulation and calorimetry for ePIC at the Electron-Ion Collider,
+  and AI-assisted software for physics collaborations.
+url: https://aprozo.com
+
+# Markdown engine (same one GitHub Pages uses)
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Not part of the site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - vendor
