@@ -36,7 +36,7 @@ skills:
   - group: HEP software
     items: [ROOT, Geant4, DD4hep, JANA2, PODIO/EDM4hep, HepMC3, uproot, XRootD, Rucio]
   - group: Event generators
-    items: [Sartre, Pythia8, MCNP5]
+    items: [Sartre, Pythia8]
   - group: Computing
     items: [Linux, Docker, Spack, Git & CI/CD, HTCondor, Slurm, PostgreSQL]
   - group: AI tooling
